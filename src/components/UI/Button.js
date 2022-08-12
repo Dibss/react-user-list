@@ -1,6 +1,8 @@
 const Button = () => {
   return (
-    <div></div>
+    <div>
+      <button type="submit">Add user</button>
+    </div>
   )
 }
 
