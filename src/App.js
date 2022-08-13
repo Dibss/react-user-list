@@ -15,10 +15,10 @@ const App = props => {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <UserForm onAddUser={addUserHandler}/>
       <UserList list={users}/>
-    </div>
+    </React.Fragment>
   );
 }
 
