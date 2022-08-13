@@ -1,20 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import UserForm from './components/Users/UserForm';
-import NewUser from './components/Users/NewUser';
+import UserList from './components/Users/UserList';
+
+const userArr = {};
 
 const App = props => {
 
-  const user = {};
+  const [users, setUsers] = useState(userArr);
 
-  const addUser = () => {
-    user.push(props.newUser);
+
+  const addUserHandler = newUser => {
+    console.log('newUser on app.js:', newUser);
+    setUsers((prevUsers) => {
+      console.log('prevUsers:', prevUsers);
+      return [newUser, ...prevUsers];
+    })
   }
 
   return (
     <div>
-      <UserForm onSubmit={addUser}/>
-      <NewUser />
+      <UserForm onAddUser={addUserHandler}/>
+      <UserList list={users}/>
     </div>
   );
 }
