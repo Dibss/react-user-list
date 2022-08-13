@@ -3,8 +3,6 @@ import React, {useState} from 'react';
 import UserForm from './components/Users/UserForm';
 import UserList from './components/Users/UserList';
 
-// let userArr = [];
-
 const App = props => {
 
   const [users, addNewUser] = useState([]);
