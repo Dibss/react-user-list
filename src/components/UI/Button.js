@@ -1,9 +1,15 @@
-const Button = () => {
+import styles from "./css/Button.module.css";
+
+const Button = (props) => {
   return (
-    <div>
-      <button type="submit">Add user</button>
-    </div>
-  )
-}
+    <button
+      type={props.type || "button"}
+      className={styles.button}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </button>
+  );
+};
 
 export default Button;
