@@ -14,7 +14,7 @@ const UserList = (props) => {
   )
 
   if(userList.length === 0){
-    ulContent = 'Non ci sono users registrati'
+    ulContent = 'There are no registered users'
   }
 
   return (
