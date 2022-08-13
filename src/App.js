@@ -3,19 +3,15 @@ import React, {useState} from 'react';
 import UserForm from './components/Users/UserForm';
 import UserList from './components/Users/UserList';
 
-const userArr = {};
+// let userArr = [];
 
 const App = props => {
 
-  const [users, setUsers] = useState(userArr);
-
+  const [users, addNewUser] = useState([]);
 
   const addUserHandler = newUser => {
-    console.log('newUser on app.js:', newUser);
-    setUsers((prevUsers) => {
-      console.log('prevUsers:', prevUsers);
-      return [newUser, ...prevUsers];
-    })
+    // console.log('newUser on app.js:', newUser);
+    addNewUser((prevUsers) => [...prevUsers, newUser])
   }
 
   return (
